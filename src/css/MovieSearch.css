@@ -1,0 +1,47 @@
+.container {
+ width: 100vw;
+ height: auto;
+ background: #007bbf;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ flex-flow: wrap;
+}
+
+.box {
+    width: 25vw;
+    height: 70vh;
+    background: yellow;
+    /* box-sizing: border-box; */
+    text-align: center;
+    margin: auto;
+    margin-top: 5vh;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:1200px) {
+    .box {
+        width: 25vw;
+        height: auto;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .box {
+        width: 90vw;
+        height: auto;
+        font-size: 18px;
+    }
+}
+
+.search-movie-card-poster {
+    width: 90%;
+    height: auto;
+    margin-top: 2%;
+}
+
+.search-movie-card-text {
+    margin-bottom: 0px;
+}

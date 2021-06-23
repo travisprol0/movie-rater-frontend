@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import SearchBar from './SearchBar'
+import SearchBar from './search/SearchBar'
 const Home = (props) => {
   const handleClick = () => {
     axios
@@ -23,7 +23,6 @@ const Home = (props) => {
           Log Out
         </Link>
       ) : null}
-      <SearchBar />
     </div>
   );
 };
