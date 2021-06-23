@@ -5,6 +5,7 @@ function SearchBar() {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [type, setType] = useState("");
+  const [fetchResult, setFetch] = useState();
   let baseURL = "https://movie-database-imdb-alternative.p.rapidapi.com/?s=";
 
   function titleChangeHandler(e) {
@@ -30,37 +31,34 @@ function SearchBar() {
 
     if (year === "" && type === "") {
       baseURL += titleOnly;
-    }else if (year === "") {
+    } else if (year === "") {
       baseURL += titleAndType;
     } else if (type === "") {
       baseURL += titleAndYear;
     } else {
-        baseURL += `&page=1&y=${year}&type=${type}&r=json`
-    } 
-    
-    fetchTitle(baseURL)
+      baseURL += `&page=1&y=${year}&type=${type}&r=json`;
+    }
+    fetchTitle(baseURL);
   }
 
-  function fetchTitle(baseURL){
-      console.log(baseURL)
-
-      fetch(baseURL, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "be8fdcd51fmshfe9bee8fdbbb816p1b9c3fjsne461759f5711",
-		"x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
-	}
-})
-.then((response) => response.json())
-.then (titles => console.log(titles))
-.catch(err => {
-	console.error(err);
-});
+  function fetchTitle(baseURL) {
+    fetch(baseURL, {
+      method: "GET",
+      headers: {
+        "x-rapidapi-key": "be8fdcd51fmshfe9bee8fdbbb816p1b9c3fjsne461759f5711",
+        "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
+      },
+    })
+      .then((response) => response.json())
+      .then((fetchResult) => setFetch(fetchResult.Search))
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   return (
     <>
-      <form onSubmit={submitSearchHandler}>
+      <form>
         <div>
           <label>Title</label>
           <input
@@ -91,7 +89,11 @@ function SearchBar() {
           </select>
         </div>
         <div>
-          <button placeholder="submit" type="submit">
+          <button
+            placeholder="submit"
+            type="submit"
+            onClick={submitSearchHandler}
+          >
             Go!
           </button>
         </div>
