@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SearchBar from './search/SearchBar'
+import Test from './Test'
+
 const Home = (props) => {
   const handleClick = () => {
     axios
@@ -23,6 +25,7 @@ const Home = (props) => {
           Log Out
         </Link>
       ) : null}
+      <Test />
     </div>
   );
 };
