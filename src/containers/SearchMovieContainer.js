@@ -11,7 +11,7 @@ function SearchMovieContainer (props) {
                 props.movies.map((movie) => (
                     
 
-                        <MovieSearch key={movie.imdbID} movie={movie} />
+                        <MovieSearch key={movie.imdbID} id={movie.imdbID} movie={movie} />
                   ))
         )
     }
