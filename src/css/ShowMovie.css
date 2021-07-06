@@ -1,5 +1,5 @@
 .show-movie-container {
-    display: flex;
+    /* display: flex; */
 }
 
 .show-movie-container img {
@@ -15,10 +15,16 @@
 
 
 .show-movie-info-div {
-    display:flex;
+    /* display:flex; */
 }
 
 .movie-info-one {
     margin-left: 1rem;
     width: 50%
+}
+
+.ReactModal__Content {
+    margin: auto;
+    width: 70vw;
+    height: 60vh;
 }

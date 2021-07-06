@@ -30,7 +30,7 @@ function ShowMovie(props) {
       </div>
       <div className="show-movie-info-div">
         <div className="movie-info-one">
-        <h2>{state.Title}</h2>
+          <h2>{state.Title}</h2>
           <h4>Director: {state.Director}</h4>
           <p>Writer(s): {state.Writer}</p>
           <p>Cast: {state.Actors}</p>
@@ -43,14 +43,8 @@ function ShowMovie(props) {
           <p>Release Date: {state.Released}</p>
           <p>IMDB Rating: {state.imdbRating}</p>
         </div>
-        {/* <p>Plot: {state.Plot}</p> */}
+        <p>Plot: {state.Plot}</p>
       </div>
-      {/* <p>{state.}</p>
-          <p>{state.}</p>
-          <p>{state.}</p>
-          <p>{state.}</p>
-        <p>{state.}</p> */}
-        <button onClick={() => props.closeWindow()}>Close</button>
     </div>
   );
 }
