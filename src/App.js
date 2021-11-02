@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import Login from "./components/registrations/Login";
 import Signup from "./components/registrations/Signup";
 import SearchContainer from "./containers/SearchContainer";
+import ApiTest from "./components/ApiTest";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -83,6 +85,7 @@ class App extends Component {
               path="/search"
               render={(props) => <SearchContainer />}
             />
+            <Route exact path="/api-test" render={(props) => <ApiTest />} />
           </Switch>
         </BrowserRouter>
       </div>

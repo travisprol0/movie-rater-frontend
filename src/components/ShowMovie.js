@@ -23,6 +23,7 @@ function ShowMovie(props) {
         console.error(err);
       });
   }, []);
+  console.log(state);
   return (
     <div className="show-movie-container">
       <div className="show-poster-div">
@@ -45,6 +46,7 @@ function ShowMovie(props) {
         </div>
         <p>Plot: {state.Plot}</p>
       </div>
+      <button>Add To Watch List</button>
     </div>
   );
 }
