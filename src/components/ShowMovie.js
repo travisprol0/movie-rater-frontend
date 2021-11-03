@@ -3,7 +3,7 @@ import "../css/ShowMovie.css";
 
 function ShowMovie(props) {
   const [title, setTitle] = useState([]);
-  const [episodes, setEpisodes] = useState([]);
+  const [episode, setEpisodes] = useState();
   useEffect(() => {
     fetchEpisodeData();
     fetchTitleData();
@@ -39,11 +39,12 @@ function ShowMovie(props) {
       },
     })
       .then((response) => response.json())
-      .then((response) => setEpisodes([response]))
+      .then((episodes) => setEpisodes(Object.entries(episodes)))
       .catch((err) => console.error(err));
   };
 
   const addTitle = () => {
+    console.log(episode);
     let postObj = {
       actors: title.Actors,
       awards: title.Awards,
@@ -65,7 +66,6 @@ function ShowMovie(props) {
       imdbRating: title.imdbRating,
       imdbVotes: title.imdbVotes,
       totalSeasons: title.totalSeasons,
-      episodes: episodes[0],
     };
     fetch("http://localhost:3000/titles", {
       method: "POST",
