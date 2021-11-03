@@ -3,7 +3,7 @@ import react, { useEffect, useState } from "react";
 function ApiTest(props) {
   const [state, setState] = useState([]);
   useEffect(() => {
-    fetch("https://frecar-epguides-api-v1.p.rapidapi.com/this is us/", {
+    fetch("https://frecar-epguides-api-v1.p.rapidapi.com/modern family/", {
       method: "GET",
       headers: {
         "x-rapidapi-host": "frecar-epguides-api-v1.p.rapidapi.com",

@@ -1,18 +1,21 @@
-import react from 'react'
-import MovieSearch from '../components/search/MovieCard'
+import react from "react";
+import MovieSearch from "../components/search/MovieCard";
 
-function SearchMovieContainer (props) {
-    if (props.movies == undefined){
-        return null;
-    } else {
-        props.movies.pop()
+function SearchMovieContainer(props) {
+  if (props.movies == undefined) {
+    return null;
+  } else {
+    props.movies.pop();
 
-        return (
-                props.movies.map((movie) => (
-                        <MovieSearch key={movie.imdbID} id={movie.imdbID} movie={movie} />
-                  ))
-        )
-    }
+    return props.movies.map((movie) => (
+      <MovieSearch
+        key={movie.imdbID}
+        id={movie.imdbID}
+        movie={movie}
+        name={movie.Title}
+      />
+    ));
+  }
 }
 
-export default SearchMovieContainer
+export default SearchMovieContainer;

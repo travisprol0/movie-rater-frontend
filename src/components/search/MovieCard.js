@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../css/MovieCard.css";
 import ShowMovie from "../ShowMovie";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
 // const customStyles = {
 //   content: {
@@ -32,14 +32,13 @@ function MovieCard(props) {
   function closeModal() {
     setIsOpen(false);
   }
-
   return (
-    <div className="box" >
+    <div className="box">
       <img className="search-movie-card-poster" src={props.movie.Poster} />
       <div className="search-movie-card-text">
         <p className="movie-search-title">{props.movie.Title}</p>
         <p className="movie-search-year">{props.movie.Year}</p>
-      <button onClick={openModal}>View Details</button>
+        <button onClick={openModal}>View Details</button>
       </div>
       <Modal
         isOpen={modalIsOpen}
@@ -49,7 +48,7 @@ function MovieCard(props) {
         contentLabel="Example Modal"
       >
         <button onClick={closeModal}>close</button>
-        <ShowMovie movieID={props.movie.imdbID}/>
+        <ShowMovie movieID={props.movie.imdbID} name={props.name} />
       </Modal>
     </div>
   );
